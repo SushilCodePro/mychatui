@@ -23,7 +23,7 @@ function App() {
               <img
                 style={{ height: 20, width: 20, alignItems: 'center' }}
                 src='https://t4.ftcdn.net/jpg/01/07/62/07/240_F_107620769_UwNVSoXnKS4VNcOKoZjPohlEPn83oE38.jpg'
-                alt="Conversation Icon"
+                alt="Conversation + Icon"
               />
             </div>
           </div>
