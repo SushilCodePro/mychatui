@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+// App.js
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ConversationList from './ConversationList';
+import Chat from './Chat';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <div className='left-side'>
+          <div className='left-search'>
+            <input
+              type='text'
+              value={""}
+              placeholder="&#128269; Search for conversation"
+              onChange={""}
+            />
+          </div>
+          <div className='conversation-list-ion'>
+            <h6>CONVERSATIONS</h6>
+            <div>
+              <img
+                style={{ height: 20, width: 20, alignItems: 'center' }}
+                src='https://t4.ftcdn.net/jpg/01/07/62/07/240_F_107620769_UwNVSoXnKS4VNcOKoZjPohlEPn83oE38.jpg'
+                alt="Conversation Icon"
+              />
+            </div>
+          </div>
+          <div className='left-conversation-list'>
+            <ConversationList />
+          </div>
+        </div>
+        <div className='right-side'>
+          <Routes>
+            <Route path="/chat/:name" element={<Chat />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
