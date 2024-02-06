@@ -24,6 +24,7 @@
 .container .right-side{
   flex: 75%;
   height:96vh ;
+  position: relative;
   background-color: white;
   border: 1px solid rgb(47, 116, 255);
 }
@@ -75,4 +76,32 @@
   flex: 80%;
   /* width: 20px; */
   line-height: 20px;
+}
+.chat-header{
+  height: auto;
+  margin: 15px 0px;
+  padding: 10px;
+  text-align: center;
+  font-size:15;
+  font-weight:600;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+  /* border: 1px solid rgb(199, 14, 14); */
+}
+.send-input{
+  display: flex;
+  gap: 5px;
+  top:85vh;
+  position: absolute;
+}
+.send-input input{
+  width: 650px;
+  margin: 0px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+}
+.send-input input:focus{
+  outline: none;
+}
+.send-input .send-icon img{
+  height: 30px;
 }
