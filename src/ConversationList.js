@@ -1,17 +1,17 @@
 // ConversationList.js
-// import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import conversationsData from './ConversationData';
-function ConversationList() {
-  // useEffect(
+import { useChatContext } from './ChatContext';
+// import conversationsData from './ConversationData';
 
-  // ,[]);
+function ConversationList() {
+  const { conversations } = useChatContext();
+
   return (
     <>
-      {/* <div className='left-conversation-list'> */}
       <ol>
-        {conversationsData.map((conversation) =>
-          <li>
+        {conversations.map((conversation) => (
+          <li key={conversation.id}>
             <Link
               to={`/chat/${conversation.name}`}
               className='conversation-link'
@@ -25,11 +25,9 @@ function ConversationList() {
               </div> 
             </Link>
           </li>
-        )}
+        ))}
       </ol>
-      {/* </div> */}
     </>
-    
   );
 }
 
