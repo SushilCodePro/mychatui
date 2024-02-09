@@ -23,17 +23,29 @@ function Chat() {
     updateChat(conversationId + 1, inputChat);
     setInputChat('');
   };
-  console.log("chat-conversations", conversations);
+  // console.log("chat-conversations", conversations);
   return (
     <div className=''>
       <div className='chat-header'>{name}</div>
-      {conversations.map((person) => (
-        person.chat.map((message, index) => (
-          <div key={index}>
-            <p>{message}</p>
-          </div>
-        ))
-      ))}
+      {conversations.map((person) => {
+        if (person.name === name) {
+          return person.chat.map((message, index) => (
+            <div key={index}>
+              <p>{message}</p>
+            </div>
+          ))
+        }
+        // return;
+      })}
+      {/* {conversations.map((person) => (
+        person.name === name && (
+          person.chat.map((message, index) => (
+            <div key={index}>
+              <p>{message}</p>
+            </div>
+          ))
+        )
+      ))} */}
       <div className='send-input'>
         <div className='attach-icon'>
           <img src='https://cdn-icons-png.flaticon.com/128/8138/8138518.png' alt='attach-icon' />
