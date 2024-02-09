@@ -35,7 +35,7 @@ function Chat() {
             </div>
           ))
         }
-        return;
+        return null;
       })}
       {/* {conversations.map((person) => (
         person.name === name && (
